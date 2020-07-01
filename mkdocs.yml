@@ -13,3 +13,5 @@ theme:
 nav:
   - Home: index.md
   - Actions: GitHubActions.md
+  - MkDocs: MkDocs.md
+  - Pages: GitHubPages.md

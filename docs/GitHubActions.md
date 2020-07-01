@@ -13,7 +13,8 @@ You can easily tell if your git project is enabled for Actions by seeing if ther
 1. Create a **.github** directory in your repository
 2. Add an **actions** directory inside the **.github** directory
 3. Create an action to generate and publish the site using [MkDocs](https://www.mkdocs.org) (*see below for instructions*)
-4. Create a workflow to checkout the code from git and then run the action created in step 3 to generate the site
+4. Add a **workflows** directory inside the **.github** directory
+5. Create a workflow to checkout the code from git and then run the action created in step 3 to generate the site
 
 ## Actions
 
@@ -73,7 +74,7 @@ which simple runs the mkdocs command, with the **gh-deploy** option to deploy to
 
 The workflow defines when a GitHub action will run and what actions will be run.  For a project the workflow files must exist in the **.github/workflows** directory structure at the root of the project.
 
-The workflow file for this project contains the following:
+The workflow file (**build.yml**) for this project contains the following:
 
 ```yaml
 name: GenerateSite
