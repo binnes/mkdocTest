@@ -14,7 +14,7 @@ MkDocs is configured using a file named **mkdocs.yml** located in the root direc
 site_name: Testing mkdocs
 ```
 
-Once you have the **mkdocs.yml** file you can start the local server to track changes to the generated site as you modify the Markdown documents.  If you want to turn this feature on you simply run command ```mkdocs serve``` in a terminal window in the directory containing the **mkdocs.yml** file.  You can see the generated site at location http://localhost:8000.
+Once you have the **mkdocs.yml** file you can start the local server to track changes to the generated site as you modify the Markdown documents.  If you want to turn this feature on you simply run command ```mkdocs serve``` in a terminal window in the directory containing the **mkdocs.yml** file.  You can see the generated site at location [http://localhost:8000](http://localhost:8000).
 
 The **mkdocs.yml** file for this project is:
 
