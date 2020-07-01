@@ -9,5 +9,5 @@ theme:
         previous: 80 # p
         search: 83   # s
 nav:
-  - Home: README.md
+  - Home: index.md
 
