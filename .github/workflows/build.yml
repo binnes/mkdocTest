@@ -14,4 +14,4 @@ jobs:
         uses: actions/checkout@v2
         
       - name: generate site
-        uses: .github/actions/
+        uses: ./.github/actions/
