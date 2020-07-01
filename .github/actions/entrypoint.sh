@@ -11,4 +11,4 @@
 #remote_repo="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.ibm.com/${GITHUB_REPOSITORY}.git"
 #git remote rm origin
 #git remote add origin "${remote_repo}"
-mkdocs gh-deploy --config-file "${GITHUB_WORKSPACE}/mkdocs.yml"
+mkdocs gh-deploy --config-file "${GITHUB_WORKSPACE}/mkdocs.yml" --force
