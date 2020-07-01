@@ -46,6 +46,8 @@ You can see all the configuration options in the [MkDocs User Guide](https://www
 - The default theme is **mkdocs**, but this can be altered using the **theme** configuration options.  Some themes have customization options, such as the shortcut keys I've enabled in this project.
 - You control the navigation options of the published site using the **nav** configuration option.  
 
+This project is using GitHub Actions to generate the site, so the site directory shouldn't be pushed manually into the GitHub repository, so this project has added the **site/** directory to the **.gitignore** file, to prevent it being added to the repository.
+
 ## Controlling site navigation
 
 The **nav** configuration controls the navigation on the site.  Different themes can support different levels of navigation nesting and offer different navigation options on the page.  
