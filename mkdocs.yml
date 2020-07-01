@@ -1,4 +1,6 @@
 site_name: Testing mkdocs
+site_url: https://binnes.github.io/mkdocTest
+repo_url: https://github.com/binnes/mkdocTest
 theme:
     name: mkdocs
 #    name: readthedocs
