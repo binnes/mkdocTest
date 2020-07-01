@@ -48,7 +48,7 @@ RUN apk add --no-cache \
     git \
     git-fast-import \
     openssh
-    
+
 RUN pip install --no-cache-dir mkdocs
 
 COPY entrypoint.sh /entrypoint.sh
@@ -90,7 +90,7 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
-        
+
       - name: generate site
         uses: ./.github/actions/
 ```
