@@ -12,4 +12,4 @@ theme:
         search: 83   # s
 nav:
   - Home: index.md
-  - Actions: GithubActions.md
+  - Actions: GitHubActions.md
