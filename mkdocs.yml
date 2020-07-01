@@ -1,0 +1,13 @@
+site_name: Testing mkdocs
+theme:
+    name: mkdocs
+#    name: readthedocs
+    nav_style: dark
+    shortcuts:
+        help: 191    # ?
+        next: 78     # n
+        previous: 80 # p
+        search: 83   # s
+nav:
+  - Home: README.md
+
