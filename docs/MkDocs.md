@@ -63,7 +63,7 @@ You can control the navigation nesting by adding a section in the configuration.
     - Pages: GitHubPages.md
 ```
 
-the navigation now shows the top level **cConfiguration** option as a drop down list containing the 3 sub-level entries.
+the navigation now shows the top level **Configuration** option as a drop down list containing the 3 sub-level entries.
 
 ![new navigation](images/navigation.png)
 
@@ -84,3 +84,30 @@ To manually publish documentation to GitHub Pages:
 ```sh
 mkdocs gh-deploy
 ```
+
+## Options for customisation
+
+MkDocs works pretty well with the default theme and configuration, but it is possible to change the styling and functionality of the generated site or add more complex Markdown formatting options.
+
+### Options for changing the generated site look and feel
+
+The default **mkdocs** and **readthedocs** themes provide good options for the layout, navigation and style of the generated site, but the [community provided themes](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes) offer additional options.
+
+However if none of the provided themes are exactly what is needed then there are 2 options:
+
+1. Customise an existing theme - which is documented in the [MkDocs user guide](https://www.mkdocs.org/user-guide/styling-your-docs/#customizing-a-theme)
+2. Generate your own custom theme - which is also documented in the [MkDocs user guide](https://www.mkdocs.org/user-guide/custom-themes/)
+
+If you choose a community or customised theme, then you will need to modify the Dockerfile for the [GitHub Action](GitHubActions.md) to ensure the theme is available when the action is run to generate the site.
+
+### Markdown extensions
+
+MkDocs uses [Python Markdown](https://python-markdown.github.io/) to translate the Markdown files into HTML, which supports [extensions](https://python-markdown.github.io/extensions/).  You can modify the default set of extensions that MkDocs uses to add support for additional Markdown features using the [**markdown_extensions**](https://python-markdown.github.io/extensions/) configuration options in the mkdocs.yml configuration file.
+
+If you choose add a Markdown extension, then you may need to modify the Dockerfile for the [GitHub Action](GitHubActions.md) to ensure the extension is installed.  The officially supported extensions are usually installed by default, but third party extensions will need to be installed so they are available when the action is run to generate the site.
+
+### Plugins
+
+Plugins provide more advanced customisation within MkDocs, such as providing the search capability within the generated static site.  You can create your own plugins or use one of the [community provided plugins](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins) to add additional capability to the generated site.
+
+Again any plugins used in a site will need to be installed, so the Docker file for the [GitHub Action](GitHubActions.md) will need to be modified to ensure all plugins are available when the action runs to generate the site.
