@@ -31,6 +31,8 @@ theme:
         next: 78     # n
         previous: 80 # p
         search: 83   # s
+markdown_extensions:
+  - attr_list
 nav:
   - Home: index.md
   - Actions: GitHubActions.md
@@ -38,12 +40,13 @@ nav:
   - Pages: GitHubPages.md
 ```
 
-You can see all the configuration options in the [MkDocs User Guide](https://www.mkdocs.org/user-guide/configuration/), but some things to note:
+You can see all the configuration options in the [MkDocs User Guide](https://www.mkdocs.org/user-guide/configuration/){target=_blank}, but some things to note:
 
 - The default location MkDocs looks for docs to render is the **docs** directory in the root of your project.  This can be changed by adding the **docs_dir** configuration option.
 - The default location MkDocs will write the rendered site is the **site** directory.  This can be changed by adding the **site_dir** configuration option.
 - MkDocs automatically adds the **search** plugin to generate a search capability on a generated site.
 - The default theme is **mkdocs**, but this can be altered using the **theme** configuration options.  Some themes have customization options, such as the shortcut keys I've enabled in this project.
+- The **attr_list** Markdown extension has been enabled to allow [additional HTML attributes](https://python-markdown.github.io/extensions/attr_list/){target=_blank} to be added to markdown.  This is used to allow links to be opened in a new tab or window rather than leaving the site by adding the **target attribute**.  So the Markdown for the link in this section is specified in Markdown as  : ```[additional HTML attributes](https://python-markdown.github.io/extensions/attr_list/){target=_blank}```
 - You control the navigation options of the published site using the **nav** configuration option.  
 
 This project is using GitHub Actions to generate the site, so the site directory shouldn't be pushed manually into the GitHub repository, so this project has added the **site/** directory to the **.gitignore** file, to prevent it being added to the repository.
@@ -65,7 +68,7 @@ You can control the navigation nesting by adding a section in the configuration.
 
 the navigation now shows the top level **Configuration** option as a drop down list containing the 3 sub-level entries.
 
-![new navigation](images/navigation.png)
+![new navigation](images/navigation.png){width=600}
 
 ## Publishing the site
 
@@ -103,6 +106,8 @@ If you choose a community or customised theme, then you will need to modify the 
 ### Markdown extensions
 
 MkDocs uses [Python Markdown](https://python-markdown.github.io/) to translate the Markdown files into HTML, which supports [extensions](https://python-markdown.github.io/extensions/).  You can modify the default set of extensions that MkDocs uses to add support for additional Markdown features using the [**markdown_extensions**](https://python-markdown.github.io/extensions/) configuration options in the mkdocs.yml configuration file.
+
+This project has the **attr_list** extension enabled to allow additional HTML attributes to be added when formatting pages.  In this project it is primarily used to add the **target** attributes to external links.  An additional use is to resize an image by specifying a width tag ```{width=600}
 
 If you choose add a Markdown extension, then you may need to modify the Dockerfile for the [GitHub Action](GitHubActions.md) to ensure the extension is installed.  The officially supported extensions are usually installed by default, but third party extensions will need to be installed so they are available when the action is run to generate the site.
 

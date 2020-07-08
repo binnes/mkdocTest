@@ -10,6 +10,8 @@ theme:
         next: 78     # n
         previous: 80 # p
         search: 83   # s
+markdown_extensions:
+  - attr_list
 nav:
   - Home: index.md
   - Actions: GitHubActions.md

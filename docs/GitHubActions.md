@@ -8,25 +8,25 @@ You can easily tell if your git project is enabled for Actions by seeing if ther
 
 ![GitHub menu](images/menu.png)
 
-[Full documentation](https://help.github.com/en/actions) is available for GitHub actions, but follow these simple steps and use this repository as a reference.  The action used in this project publishes the project documentation (in the **docs** folder of the repo) to a GitHub pages site using the MkDocs static site generator.
+[Full documentation](https://help.github.com/en/actions){target=_blank} is available for GitHub actions, but follow these simple steps and use this repository as a reference.  The action used in this project publishes the project documentation (in the **docs** folder of the repo) to a GitHub pages site using the MkDocs static site generator.
 
 1. Create a **.github** directory in your repository
 2. Add an **actions** directory inside the **.github** directory
-3. Create an action to generate and publish the site using [MkDocs](https://www.mkdocs.org) (*see below for instructions*)
+3. Create an action to generate and publish the site using [MkDocs](https://www.mkdocs.org){target=_blank} (*see below for instructions*)
 4. Add a **workflows** directory inside the **.github** directory
 5. Create a workflow to checkout the code from git and then run the action created in step 3 to generate the site
 
 ## Actions
 
-An action is an individual task, which can be run as part of a workflow initiated when something happens on a GitHub repository.  There is a [marketplace](https://github.com/marketplace?type=actions) of actions available or you can create your own private actions.
+An action is an individual task, which can be run as part of a workflow initiated when something happens on a GitHub repository.  There is a [marketplace](https://github.com/marketplace?type=actions){target=_blank} of actions available or you can create your own private actions.
 
 In this example a private action is created.
 
 Private actions can exist in the git repository where they will be used.  I recommend adding them within the .github directory to separate the GitHub action configuration with the primary purpose of the github repository.
 
-See the [documentation](https://help.github.com/en/actions/creating-actions) for all the options for creating actions, but this example uses a container to perform the operations of the action.
+See the [documentation](https://help.github.com/en/actions/creating-actions){target=_blank} for all the options for creating actions, but this example uses a container to perform the operations of the action.
 
-An action is defined by a configuration file, called **action.yml**, again the syntax of the config file is described in the [documentation](https://help.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions).  The **action.yml** file for this project contains the following:
+An action is defined by a configuration file, called **action.yml**, again the syntax of the config file is described in the [documentation](https://help.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions){target=_blank}.  The **action.yml** file for this project contains the following:
 
 ```yaml
 # action.yml
@@ -114,4 +114,4 @@ GitHub Pages : ![GenerateSite](https://github.com/binnes/mkdocTest/workflows/Gen
 
 ## User Limits
 
-GitHub Actions are available on [most](https://docs.github.com/en/actions/getting-started-with-github-actions/about-github-actions#usage-limits) GitHub accounts, though there are [usage limitations](https://docs.github.com/en/actions/getting-started-with-github-actions/about-github-actions#usage-limits), but for documentation formatting the limitations should not pose an issue.
+GitHub Actions are available on [most](https://docs.github.com/en/actions/getting-started-with-github-actions/about-github-actions){target=_blank} GitHub accounts, though there are [usage limitations](https://docs.github.com/en/actions/getting-started-with-github-actions/about-github-actions#usage-limits){target=_blank}, but for documentation formatting the limitations should not pose an issue.
