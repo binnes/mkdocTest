@@ -111,3 +111,7 @@ You can add a badge to your project README.md, to give a visual indication if th
 ```md
 GitHub Pages : ![GenerateSite](https://github.com/binnes/mkdocTest/workflows/GenerateSite/badge.svg?branch=master)
 ```
+
+## User Limits
+
+GitHub Actions are available on [most](https://docs.github.com/en/actions/getting-started-with-github-actions/about-github-actions#usage-limits) GitHub accounts, though there are [usage limitations](https://docs.github.com/en/actions/getting-started-with-github-actions/about-github-actions#usage-limits), but for documentation formatting the limitations should not pose an issue.
