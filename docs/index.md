@@ -1,6 +1,6 @@
 # MkDoc Test
 
-This site show how to use [MkDocs](https://www.mkdocs.org){target=_blank}  and [GitHub Actions](https://help.github.com/en/actions){target=_blank} to convert project documentation written in Markdown to a static web site, which can be hosted on [GiHub Pages](https://help.github.com/en/github/working-with-github-pages){target=_blank}.  This provides a much better user experience than GitHib rendered Markdown.  The generated site is also reactive to screen size, so works on all screen sizes automatically.
+This site show how to use [MkDocs](https://www.mkdocs.org){target=_blank}  and [GitHub Actions](https://help.github.com/en/actions){target=_blank} to convert project documentation written in Markdown to a static web site, which can be hosted on [GiHub Pages](https://help.github.com/en/github/working-with-github-pages){target=_blank}.  This provides a much better user experience than GitHib rendered Markdown.  The default themes supplied with MkDocs creates a site that is reactive to screen size, so works on all devices automatically.
 
 Combining **MkDocs**, **GitHub Actions** and **GitHub Pages** enables an automatic process of keeping the documentation site on GitHub Pages up to date.  You only need to focus on creating the documentation in Markdown.  
 
