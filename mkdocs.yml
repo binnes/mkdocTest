@@ -1,20 +1,35 @@
 site_name: Testing mkdocs
+site_description: >-
+  Automatically create formatted documentation from Markdown files in a GitHub repository.
+  The Markdown is automatically formatted using Docs, generated when a GitHub pull request or push
+  is made to the repository using GitHub Actions and hosted on GitHub Pages.
 site_url: https://binnes.github.io/mkdocTest
+repo_name: binnes/mkdocTest
 repo_url: https://github.com/binnes/mkdocTest
+edit_uri: ""
 theme:
     name: mkdocs
 #    name: readthedocs
+#    name: material
+    highlightjs: true
     nav_style: dark
-    shortcuts:
-        help: 191    # ?
-        next: 78     # n
-        previous: 80 # p
-        search: 83   # s
+#use_directory_urls: true
+plugins:
+  - search
+  - with-pdf:
+      cover_subtitle: Workshop documentation from Markdown
 markdown_extensions:
   - attr_list
+  - admonition
+  - toc
+extra_css:
+    - css/extra.css
+    - css/pdf-print.css
 nav:
   - Home: index.md
   - Actions: GitHubActions.md
   - MkDocs: MkDocs.md
   - Pages: GitHubPages.md
-google_analytics: ['UA-172132667-1', 'binnes.github.io/mkdocTest']
+google_analytics:
+  - 'UA-172132667-1'
+  - auto

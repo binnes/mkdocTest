@@ -1,10 +1,10 @@
 # MkDocs
 
-[MkDocs](https://www.mkdocs.org) is an open source project that takes Markdown documents and generates a static web site.  The static web site does have some useful features, such as navigation and search.
+[MkDocs](https://www.mkdocs.org){target=_blank} is an open source project that takes Markdown documents and generates a static web site.  The static web site does have some useful features, such as navigation and search.
 
-MkDocs is easy to [install](https://www.mkdocs.org/#installation) on all common operating systems and provides a good developer experience, where you can see real time changes as you work on a document.  
+MkDocs is easy to [install](https://www.mkdocs.org/#installation){target=_blank} on all common operating systems and provides a good developer experience, where you can see real time changes as you work on a document.  
 
-You also have multiple [built-in](https://www.mkdocs.org/#theming-our-documentation) or  [community](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes) themes available and have the option to customize an existing theme or [create a new theme](https://www.mkdocs.org/user-guide/custom-themes/) the get the documentation layout and style exactly as you want.  For this project the default theme is used.
+You also have multiple [built-in](https://www.mkdocs.org/#theming-our-documentation){target=_blank} or  [community](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes){target=_blank} themes available and have the option to customize an existing theme or [create a new theme](https://www.mkdocs.org/user-guide/custom-themes/){target=_blank} the get the documentation layout and style exactly as you want.  For this project the default theme is used.
 
 ## Configuring MkDocs
 
@@ -20,34 +20,50 @@ The **mkdocs.yml** file for this project is:
 
 ```yaml
 site_name: Testing mkdocs
+site_description: >-
+  Automatically create formatted documentation from Markdown files in a GitHub repository.
+  The Markdown is automatically formatted using Docs, generated when a GitHub pull request or push
+  is made to the repository using GitHub Actions and hosted on GitHub Pages.
 site_url: https://binnes.github.io/mkdocTest
+repo_name: binnes/mkdocTest
 repo_url: https://github.com/binnes/mkdocTest
+edit_uri: ""
 theme:
     name: mkdocs
 #    name: readthedocs
+#    name: material
+    highlightjs: true
     nav_style: dark
-    shortcuts:
-        help: 191    # ?
-        next: 78     # n
-        previous: 80 # p
-        search: 83   # s
+plugins:
+  - search
+  - with-pdf:
+      cover_subtitle: Workshop documentation from Markdown
 markdown_extensions:
   - attr_list
+  - admonition
+  - toc
+extra_css:
+    - css/extra.css
+    - css/pdf-print.css
 nav:
   - Home: index.md
   - Actions: GitHubActions.md
   - MkDocs: MkDocs.md
   - Pages: GitHubPages.md
+google_analytics:
+  - 'UA-172132667-1'
+  - auto
 ```
 
 You can see all the configuration options in the [MkDocs User Guide](https://www.mkdocs.org/user-guide/configuration/){target=_blank}, but some things to note:
 
 - The default location MkDocs looks for docs to render is the **docs** directory in the root of your project.  This can be changed by adding the **docs_dir** configuration option.
 - The default location MkDocs will write the rendered site is the **site** directory.  This can be changed by adding the **site_dir** configuration option.
-- MkDocs automatically adds the **search** plugin to generate a search capability on a generated site.
-- The default theme is **mkdocs**, but this can be altered using the **theme** configuration options.  Some themes have customization options, such as the shortcut keys I've enabled in this project.
+- MkDocs automatically adds the **search** plugin to generate a search capability on a generated site, but it must be specified when adding a **plugins** section to use additional plugins
+- The default theme is **mkdocs**, but this can be altered using the **theme** configuration options.  Some themes have customization options, such as the nav_style setting enabled in this project.
 - The **attr_list** Markdown extension has been enabled to allow [additional HTML attributes](https://python-markdown.github.io/extensions/attr_list/){target=_blank} to be added to markdown.  This is used to allow links to be opened in a new tab or window rather than leaving the site by adding the **target attribute**.  So the Markdown for the link in this section is specified in Markdown as  : ```[additional HTML attributes](https://python-markdown.github.io/extensions/attr_list/){target=_blank}```
-- You control the navigation options of the published site using the **nav** configuration option.  
+- You control the navigation options of the published site using the **nav** configuration option.
+- MkDocs is enabled for Google Analytics, simply specify your details to start collecting data on a site.
 
 This project is using GitHub Actions to generate the site, so the site directory shouldn't be pushed manually into the GitHub repository, so this project has added the **site/** directory to the **.gitignore** file, to prevent it being added to the repository.
 
@@ -68,7 +84,7 @@ You can control the navigation nesting by adding a section in the configuration.
 
 the navigation now shows the top level **Configuration** option as a drop down list containing the 3 sub-level entries.
 
-![new navigation](images/navigation.png){width=600}
+![new navigation](images/navigation.png){: .center width=50%}
 
 ## Publishing the site
 
@@ -96,23 +112,96 @@ MkDocs works pretty well with the default theme and configuration, but it is pos
 
 The default **mkdocs** and **readthedocs** themes provide good options for the layout, navigation and style of the generated site, but the [community provided themes](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes) offer additional options.
 
+Using a community theme is usually pretty easy:
+
+1. install the theme - this is usually done using the pip package manager e.g. ```pip install mkdocs-material```
+2. configure **mkdocs.yml** to set the theme e.g.
+
+    ```
+    theme:
+        name: material
+    ```
+
 However if none of the provided themes are exactly what is needed then there are 2 options:
 
 1. Customise an existing theme - which is documented in the [MkDocs user guide](https://www.mkdocs.org/user-guide/styling-your-docs/#customizing-a-theme)
 2. Generate your own custom theme - which is also documented in the [MkDocs user guide](https://www.mkdocs.org/user-guide/custom-themes/)
 
-If you choose a community or customised theme, then you will need to modify the Dockerfile for the [GitHub Action](GitHubActions.md) to ensure the theme is available when the action is run to generate the site.
+!!! note
+    If you choose a community theme or generate your own theme, then you might need to modify the Dockerfile for the [GitHub Action](GitHubActions.md) if additional packages are needed for the theme.
 
 ### Markdown extensions
 
 MkDocs uses [Python Markdown](https://python-markdown.github.io/) to translate the Markdown files into HTML, which supports [extensions](https://python-markdown.github.io/extensions/).  You can modify the default set of extensions that MkDocs uses to add support for additional Markdown features using the [**markdown_extensions**](https://python-markdown.github.io/extensions/) configuration options in the mkdocs.yml configuration file.
 
-This project has the **attr_list** extension enabled to allow additional HTML attributes to be added when formatting pages.  In this project it is primarily used to add the **target** attributes to external links.  An additional use is to resize an image by specifying a width tag ```{width=600}
+This project has the **attr_list** extension enabled to allow additional HTML attributes to be added when formatting pages.  In this project it is primarily used to add the **target** attributes to external links.  An additional use is to resize an image by specifying a width tag ```{width=600}```
 
 If you choose add a Markdown extension, then you may need to modify the Dockerfile for the [GitHub Action](GitHubActions.md) to ensure the extension is installed.  The officially supported extensions are usually installed by default, but third party extensions will need to be installed so they are available when the action is run to generate the site.
+
+#### Example of customisation
+
+Adding the **attr_list** extension we can alter the appearance of images.
+
+!!! warning
+    The additional markup used for formatting by Markdown extensions will not be rendered by the GitHub Markdown renderer.  The extended Markdown will appear on pages viewed through the GitHub repository pages.
+
+The Markdown ```![menu](images/menu.png)``` will generate the image below:
+
+![menu](images/menu.png)
+
+However, you may want to change the size of the image, so we can use any of the CSS options for specifying a size (px, em, rem, %, ...).  The following will make the image 50% of the width of the column containing the image: ```![menu](images/menu.png){width=50%}``` which produces the following output:
+
+![menu](images/menu.png){width=50%}
+
+You can also add additional styles to an element, so to centre the above image the following can be used: ```![menu](images/menu.png){width=50% style="display: block; margin: 0 auto;"}```
+
+which creates the following:
+
+![menu](images/menu.png){width=50% style="display: block; margin: 0 auto;"}
+
+!!! note
+    You can combine customising the style using additional CSS with the attr_list plugin to create a custom style to apply to Markdown.  If the theme provides a suitable style then you can also use it rather than defining a new custom style where appropriate.
+
+If I create a file within a css folder inside the docs folder called **extra.css** containing:
+
+```css
+img.center {
+  display: block;
+  margin: 0 auto;
+}
+```
+
+and configure MkDocs to use that file by adding the **extra_css** configuration to the **mkdocs.yml** configuration file, then I can just apply the class to the image: ```![menu](images/menu.png){width=50% .center}``` which produces the same output as using the style attribute above.
+
+![menu](images/menu.png){width=50% .center}
+
+You may also have noticed the **Note** section above.  This is created using the [**admonition**](https://python-markdown.github.io/extensions/admonition/){target=_blank} Markdown extension and the following Markdown text:
+
+```Markdown
+!!! note
+    You can combine customising the style using additional CSS with the attr_list plugin to create a custom style to apply to Markdown.  If the theme provides a suitable style then you can also use it rather than defining a new custom style where appropriate.
+```
+
+The default **mkdocs** theme supports admonition tags of **note**, **warning** and **danger**.  You can add additional tags by creating custom CSS in the **extra.css** file.
 
 ### Plugins
 
 Plugins provide more advanced customisation within MkDocs, such as providing the search capability within the generated static site.  You can create your own plugins or use one of the [community provided plugins](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins) to add additional capability to the generated site.
 
 Again any plugins used in a site will need to be installed, so the Docker file for the [GitHub Action](GitHubActions.md) will need to be modified to ensure all plugins are available when the action runs to generate the site.
+
+## Generating PDF documentation for your site
+
+In additional to a static web site, MkDocs can also generate a PDF file containing all the documents in the site combined into a single PDF.  To do this you need to use a plugin.  There are a number of plugins available that will generate a pdf, but the one I use is called **MkDocs with pdf**.  It is added to the configuration in the plugin section:
+
+```yaml
+plugins:
+  - search
+  - with-pdf:
+      cover_subtitle: Workshop documentation from Markdown
+```
+
+!!! note
+    You need to add the search plugin when adding the plugins section.  The search plugin is added by default if no plugins section is added, but needs to be manually added when a plugins section is created in the configuration file.
+
+You will see there is an option to provide a subtitle to be placed on the cover page.
