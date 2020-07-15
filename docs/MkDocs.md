@@ -71,7 +71,7 @@ This project is using GitHub Actions to generate the site, so the site directory
 
 The **nav** configuration controls the navigation on the site.  Different themes can support different levels of navigation nesting and offer different navigation options on the page.  
 
-You can control the navigation nesting by adding a section in the configuration.  If I changes the navigation for this project to:
+You can control the navigation nesting by adding a section in the configuration.  If I changed the navigation for this project to:
   
 ```yaml
   nav:
