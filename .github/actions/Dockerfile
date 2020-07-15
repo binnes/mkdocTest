@@ -19,7 +19,7 @@ RUN apk add --no-cache \
     update-ms-fonts && \
     fc-cache -f
     
-RUN pip install --no-cache-dir mkdocs mkdocs-with-pdf==0.2.2 mkdocs-material
+RUN pip install --no-cache-dir mkdocs mkdocs-with-pdf mkdocs-material
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh

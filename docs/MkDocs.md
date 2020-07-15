@@ -206,9 +206,6 @@ Again any plugins used in a site will need to be installed, so the Docker file f
 
 In additional to a static web site, MkDocs can also generate a PDF file containing all the documents in the site combined into a single PDF.  To do this you need to use a plugin.  There are a number of plugins available that will generate a pdf, but the one I use is called **MkDocs with pdf**.  Before you can use it you need to install it along with the prerequisites.  The installation is documented in the [plugin project README file](https://github.com/orzih/mkdocs-with-pdf){target=_blank}.
 
-!!! warning
-    There is a bug in version 0.2.3 which prevents images being added to the pdf, so use version 0.2.2 until a newer release is available.
-
 Once the plugin is installed it can be added to the MkDocs configuration file, in the plugin section:
 
 ```yaml
