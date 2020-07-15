@@ -31,6 +31,7 @@ site_description: >-
   The Markdown is automatically formatted using Docs, generated when a GitHub pull request or push
   is made to the repository using GitHub Actions and hosted on GitHub Pages.
 site_url: https://binnes.github.io/mkdocTest
+site_author: Brian Innes
 repo_name: binnes/mkdocTest
 repo_url: https://github.com/binnes/mkdocTest
 edit_uri: ""
@@ -63,6 +64,8 @@ google_analytics:
 
 You can see all the configuration options in the [MkDocs User Guide](https://www.mkdocs.org/user-guide/configuration/){target=_blank}, but some things to note:
 
+- The site_name is a mandatory field and is used as the title for the site.
+- The site_description field provides the description header metadata, which is used by a number of tools to summarise the content of a site
 - The default location MkDocs looks for docs to render is the **docs** directory in the root of your project.  This can be changed by adding the **docs_dir** configuration option.
 - The default location MkDocs will write the rendered site is the **site** directory.  This can be changed by adding the **site_dir** configuration option.
 - MkDocs automatically adds the **search** plugin to generate a search capability on a generated site, but it must be specified when adding a **plugins** section to use additional plugins
