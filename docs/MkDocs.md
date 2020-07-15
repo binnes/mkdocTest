@@ -6,6 +6,12 @@ MkDocs is easy to [install](https://www.mkdocs.org/#installation){target=_blank}
 
 You also have multiple [built-in](https://www.mkdocs.org/#theming-our-documentation){target=_blank} or  [community](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes){target=_blank} themes available and have the option to customize an existing theme or [create a new theme](https://www.mkdocs.org/user-guide/custom-themes/){target=_blank} the get the documentation layout and style exactly as you want.  For this project the default theme is used.
 
+## Installing MkDocs
+
+Before you can use MkDocs you need to install it.  The [documentation](https://www.mkdocs.org/#installation){target=_blank} provides instructions for installation of the python 3 prerequisites and MkDocs
+
+This project uses some additional plugins and extensions to the core MkDocs, which are discussed later in this section.  You also need to install the extensions and their prerequisites if you want to use the additional features.
+
 ## Configuring MkDocs
 
 MkDocs is configured using a file named **mkdocs.yml** located in the root directory of your project.  The minimum configuration is simply a site name.
@@ -84,7 +90,7 @@ You can control the navigation nesting by adding a section in the configuration.
 
 the navigation now shows the top level **Configuration** option as a drop down list containing the 3 sub-level entries.
 
-![new navigation](images/navigation.png){: .center width=50%}
+![new navigation](images/navigation.png){: .center style="width: 50%"}
 
 ## Publishing the site
 
@@ -136,6 +142,9 @@ MkDocs uses [Python Markdown](https://python-markdown.github.io/) to translate t
 
 This project has the **attr_list** extension enabled to allow additional HTML attributes to be added when formatting pages.  In this project it is primarily used to add the **target** attributes to external links.  An additional use is to resize an image by specifying a width tag ```{width=600}```
 
+!!! Note
+    MkDocs supports HTLM attributes, but if you want to generate a pdf of the site, then you need to avoid HTML attributes and use CSS to control presentation.  So the {width=600} HTML attribute should be rewritten to use CSS, so becomes {style="width: 600"}
+
 If you choose add a Markdown extension, then you may need to modify the Dockerfile for the [GitHub Action](GitHubActions.md) to ensure the extension is installed.  The officially supported extensions are usually installed by default, but third party extensions will need to be installed so they are available when the action is run to generate the site.
 
 #### Example of customisation
@@ -149,15 +158,15 @@ The Markdown ```![menu](images/menu.png)``` will generate the image below:
 
 ![menu](images/menu.png)
 
-However, you may want to change the size of the image, so we can use any of the CSS options for specifying a size (px, em, rem, %, ...).  The following will make the image 50% of the width of the column containing the image: ```![menu](images/menu.png){width=50%}``` which produces the following output:
+However, you may want to change the size of the image, so we can use any of the CSS options for specifying a size (px, em, rem, %, ...).  The following will make the image 50% of the width of the column containing the image: ```![menu](images/menu.png){style="width: 50%"}``` which produces the following output:
 
-![menu](images/menu.png){width=50%}
+![menu](images/menu.png){style="width: 50%"}
 
-You can also add additional styles to an element, so to centre the above image the following can be used: ```![menu](images/menu.png){width=50% style="display: block; margin: 0 auto;"}```
+You can also add additional styles to an element, so to centre the above image the following can be used: ```![menu](images/menu.png){style="width: 50%; display: block; margin: 0 auto;"}```
 
 which creates the following:
 
-![menu](images/menu.png){width=50% style="display: block; margin: 0 auto;"}
+![menu](images/menu.png){style="width: 50%; display: block; margin: 0 auto;"}
 
 !!! note
     You can combine customising the style using additional CSS with the attr_list plugin to create a custom style to apply to Markdown.  If the theme provides a suitable style then you can also use it rather than defining a new custom style where appropriate.
@@ -171,9 +180,9 @@ img.center {
 }
 ```
 
-and configure MkDocs to use that file by adding the **extra_css** configuration to the **mkdocs.yml** configuration file, then I can just apply the class to the image: ```![menu](images/menu.png){width=50% .center}``` which produces the same output as using the style attribute above.
+and configure MkDocs to use that file by adding the **extra_css** configuration to the **mkdocs.yml** configuration file, then I can just apply the class to the image: ```![menu](images/menu.png){style="width: 50%" .center}``` which produces the same output as using the style attribute above.
 
-![menu](images/menu.png){width=50% .center}
+![menu](images/menu.png){style="width: 50%" .center}
 
 You may also have noticed the **Note** section above.  This is created using the [**admonition**](https://python-markdown.github.io/extensions/admonition/){target=_blank} Markdown extension and the following Markdown text:
 
@@ -192,7 +201,12 @@ Again any plugins used in a site will need to be installed, so the Docker file f
 
 ## Generating PDF documentation for your site
 
-In additional to a static web site, MkDocs can also generate a PDF file containing all the documents in the site combined into a single PDF.  To do this you need to use a plugin.  There are a number of plugins available that will generate a pdf, but the one I use is called **MkDocs with pdf**.  It is added to the configuration in the plugin section:
+In additional to a static web site, MkDocs can also generate a PDF file containing all the documents in the site combined into a single PDF.  To do this you need to use a plugin.  There are a number of plugins available that will generate a pdf, but the one I use is called **MkDocs with pdf**.  Before you can use it you need to install it along with the prerequisites.  The installation is documented in the [plugin project README file](https://github.com/orzih/mkdocs-with-pdf){target=_blank}.
+
+!!! warning
+    There is a bug in version 0.2.3 which prevents images being added to the pdf, so use version 0.2.2 until a newer release is available.
+
+Once the plugin is installed it can be added to the MkDocs configuration file, in the plugin section:
 
 ```yaml
 plugins:

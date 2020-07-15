@@ -13,7 +13,6 @@ theme:
 #    name: material
     highlightjs: true
     nav_style: dark
-#use_directory_urls: true
 plugins:
   - search
   - with-pdf:
