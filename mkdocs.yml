@@ -4,6 +4,7 @@ site_description: >-
   The Markdown is automatically formatted using Docs, generated when a GitHub pull request or push
   is made to the repository using GitHub Actions and hosted on GitHub Pages.
 site_url: https://binnes.github.io/mkdocTest
+site_author: Brian Innes
 repo_name: binnes/mkdocTest
 repo_url: https://github.com/binnes/mkdocTest
 edit_uri: ""
