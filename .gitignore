@@ -1,4 +1,5 @@
 *.code-workspace
 .vscode/
 site/
+site.html
 .DS_STORE
