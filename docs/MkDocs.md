@@ -18,14 +18,6 @@ MkDocs is configured using a file named **mkdocs.yml** located in the root direc
 
 ```yaml
 site_name: Testing mkdocs
-```
-
-Once you have the **mkdocs.yml** file you can start the local server to track changes to the generated site as you modify the Markdown documents.  If you want to turn this feature on you simply run command ```mkdocs serve``` in a terminal window in the directory containing the **mkdocs.yml** file.  You can see the generated site at location [http://localhost:8000](http://localhost:8000).
-
-The **mkdocs.yml** file for this project is:
-
-```yaml
-site_name: Testing mkdocs
 site_description: >-
   Automatically create formatted documentation from Markdown files in a GitHub repository.
   The Markdown is automatically formatted using Docs, generated when a GitHub pull request or push
@@ -35,12 +27,9 @@ site_author: Brian Innes
 repo_name: binnes/mkdocTest
 repo_url: https://github.com/binnes/mkdocTest
 edit_uri: ""
+use_directory_urls: false
 theme:
-    name: mkdocs
-#    name: readthedocs
-#    name: material
-    highlightjs: true
-    nav_style: dark
+    name: material
 plugins:
   - search
   - with-pdf:
@@ -48,7 +37,8 @@ plugins:
 markdown_extensions:
   - attr_list
   - admonition
-  - toc
+  - toc:
+      permalink: true
 extra_css:
     - css/extra.css
     - css/pdf-print.css
@@ -59,7 +49,7 @@ nav:
   - Pages: GitHubPages.md
 google_analytics:
   - 'UA-172132667-1'
-  - auto
+  - 'binnes.github.io/mkdocTest'
 ```
 
 You can see all the configuration options in the [MkDocs User Guide](https://www.mkdocs.org/user-guide/configuration/){target=_blank}, but some things to note:
@@ -69,7 +59,7 @@ You can see all the configuration options in the [MkDocs User Guide](https://www
 - The default location MkDocs looks for docs to render is the **docs** directory in the root of your project.  This can be changed by adding the **docs_dir** configuration option.
 - The default location MkDocs will write the rendered site is the **site** directory.  This can be changed by adding the **site_dir** configuration option.
 - MkDocs automatically adds the **search** plugin to generate a search capability on a generated site, but it must be specified when adding a **plugins** section to use additional plugins
-- The default theme is **mkdocs**, but this can be altered using the **theme** configuration options.  Some themes have customization options, such as the nav_style setting enabled in this project.
+- The default theme is **mkdocs**, but this can be altered using the **theme** configuration options.
 - The **attr_list** Markdown extension has been enabled to allow [additional HTML attributes](https://python-markdown.github.io/extensions/attr_list/){target=_blank} to be added to markdown.  This is used to allow links to be opened in a new tab or window rather than leaving the site by adding the **target attribute**.  So the Markdown for the link in this section is specified in Markdown as  : ```[additional HTML attributes](https://python-markdown.github.io/extensions/attr_list/){target=_blank}```
 - You control the navigation options of the published site using the **nav** configuration option.
 - MkDocs is enabled for Google Analytics, simply specify your details to start collecting data on a site.
@@ -119,7 +109,7 @@ MkDocs works pretty well with the default theme and configuration, but it is pos
 
 ### Options for changing the generated site look and feel
 
-The default **mkdocs** and **readthedocs** themes provide good options for the layout, navigation and style of the generated site, but the [community provided themes](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes) offer additional options.
+The default **mkdocs** and **readthedocs** themes provide good options for the layout, navigation and style of the generated site, but the [community provided themes](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes) offer additional options.  This site is using the **Material** theme from the community.
 
 Using a community theme is usually pretty easy:
 
