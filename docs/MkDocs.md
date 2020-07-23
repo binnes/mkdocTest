@@ -223,3 +223,13 @@ You will see there is an option to provide a subtitle to be placed on the cover 
 Once the plugin has been added to the MkDocs config file it will be run when a **mkdocs build** command is issued, so each time the static HTML site is built then a new pdf will be created.  When using **mkdocs serve** the pdf will not be built.
 
 The default location for the pdf is within the site folder.  A new folder named **pdf** is create and the pdf file is named **document.pdf**.  These defaults can be modified by providing additional plugin configuration properties.
+
+### Explicity define all Markdown pages
+
+When generating a pdf, you need to place all Markdown documents you want included in the pdf in the navigation configuration within the **mkdocs.yaml** configuration file.  
+
+When generating a static site MkDocs will include Markdown pages that are not specified in the site navigation, so long as they are linked to by a page defined in the navigation.  
+
+However, a pdf document needs to have everything explicitly declared as it specifies the order in which the Markdown pages appear in the pdf.  Any page not explicitly declared within the **nav** configuration will not be included in the pdf, so any links to those pages will not work in the pdf.
+
+A common approach to include content which would otherwise not appear in the site navigation is to have an **Appendix** or **Additional Resources** section at the end of the pdf.

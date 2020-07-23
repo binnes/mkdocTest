@@ -8,12 +8,9 @@ site_author: Brian Innes
 repo_name: binnes/mkdocTest
 repo_url: https://github.com/binnes/mkdocTest
 edit_uri: ""
+use_directory_urls: false
 theme:
-    name: mkdocs
-#    name: readthedocs
-#    name: material
-    highlightjs: true
-    nav_style: dark
+    name: material
 plugins:
   - search
   - with-pdf:
@@ -21,7 +18,8 @@ plugins:
 markdown_extensions:
   - attr_list
   - admonition
-  - toc
+  - toc:
+      permalink: true
 extra_css:
     - css/extra.css
     - css/pdf-print.css
@@ -32,4 +30,4 @@ nav:
   - Pages: GitHubPages.md
 google_analytics:
   - 'UA-172132667-1'
-  - auto
+  - 'binnes.github.io/mkdocTest'
