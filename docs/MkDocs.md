@@ -34,6 +34,7 @@ plugins:
   - search
   - with-pdf:
       cover_subtitle: Workshop documentation from Markdown
+      output_path: pdf/mkdocs.pdf
 markdown_extensions:
   - attr_list
   - admonition
@@ -212,7 +213,7 @@ You will see there is an option to provide a subtitle to be placed on the cover 
 
 Once the plugin has been added to the MkDocs config file it will be run when a **mkdocs build** command is issued, so each time the static HTML site is built then a new pdf will be created.  When using **mkdocs serve** the pdf will not be built.
 
-The default location for the pdf is within the site folder.  A new folder named **pdf** is create and the pdf file is named **document.pdf**.  These defaults can be modified by providing additional plugin configuration properties.
+The default location for the pdf is within the site folder.  A new folder named **pdf** is create and the pdf file is named **document.pdf**.  These defaults can be modified by providing the **output_path** configuration property.
 
 ### Explicity define all Markdown pages
 

@@ -15,6 +15,7 @@ plugins:
   - search
   - with-pdf:
       cover_subtitle: Workshop documentation from Markdown
+      output_path: pdf/mkdocs.pdf
 markdown_extensions:
   - attr_list
   - admonition
