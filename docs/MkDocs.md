@@ -117,7 +117,7 @@ Using a community theme is usually pretty easy:
 1. install the theme - this is usually done using the pip package manager e.g. ```pip install mkdocs-material```
 2. configure **mkdocs.yml** to set the theme e.g.
 
-    ```
+    ``` yaml
     theme:
         name: material
     ```
@@ -204,6 +204,7 @@ plugins:
   - search
   - with-pdf:
       cover_subtitle: Workshop documentation from Markdown
+      output_path: pdf/mkdocs.pdf
 ```
 
 !!! note
@@ -215,7 +216,9 @@ Once the plugin has been added to the MkDocs config file it will be run when a *
 
 The default location for the pdf is within the site folder.  A new folder named **pdf** is create and the pdf file is named **document.pdf**.  These defaults can be modified by providing the **output_path** configuration property.
 
-### Explicity define all Markdown pages
+The **Material** theme automatically adds a link to the generated pdf at the bottom of each page of the static website.  If you're reading this served from GitHub pages, then check the bottom of this page to see the link to the pdf version of this documentation.
+
+### Explicitly define all Markdown pages
 
 When generating a pdf, you need to place all Markdown documents you want included in the pdf in the navigation configuration within the **mkdocs.yaml** configuration file.  
 
