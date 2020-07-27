@@ -137,7 +137,7 @@ MkDocs uses [Python Markdown](https://python-markdown.github.io/) to translate t
 This project has the **attr_list** extension enabled to allow additional HTML attributes to be added when formatting pages.  In this project it is primarily used to add the **target** attributes to external links.  An additional use is to resize an image by specifying a width tag ```{width=600}```
 
 !!! Note
-    MkDocs supports HTLM attributes, but if you want to generate a pdf of the site, then you need to avoid HTML attributes and use CSS to control presentation.  So the {width=600} HTML attribute should be rewritten to use CSS, so becomes {style="width: 600"}
+    MkDocs supports HTML attributes, but if you want to generate a pdf of the site, then you need to avoid HTML attributes and use CSS to control presentation.  So the {width=600} HTML attribute should be rewritten to use CSS, so becomes {style="width: 600"}
 
 If you choose add a Markdown extension, then you may need to modify the Dockerfile for the [GitHub Action](GitHubActions.md) to ensure the extension is installed.  The officially supported extensions are usually installed by default, but third party extensions will need to be installed so they are available when the action is run to generate the site.
 
