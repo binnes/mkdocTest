@@ -1,0 +1,534 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Automatically create formatted documentation from Markdown files in a GitHub repository. The Markdown is automatically formatted using Docs, generated when a GitHub pull request or push is made to the repository using GitHub Actions and hosted on GitHub Pages." name="description"/>
+<link href="https://binnes.github.io/mkdocTest/MkDocs.html" rel="canonical"/>
+<meta content="Brian Innes" name="author"/>
+<link href="assets/images/favicon.png" rel="shortcut icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-6.1.0" name="generator"/>
+<title>MkDocs - Testing mkdocs</title>
+<link href="assets/stylesheets/main.bc7e593a.min.css" rel="stylesheet"/>
+<link href="assets/stylesheets/palette.ab28b872.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+<link href="css/extra.css" rel="stylesheet"/>
+<link href="css/pdf-print.css" rel="stylesheet"/>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-172132667-1","binnes.github.io/mkdocTest"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+</head>
+<body data-md-color-accent="none" data-md-color-primary="none" data-md-color-scheme="" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#mkdocs">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header-nav md-grid">
+<a aria-label="Testing mkdocs" class="md-header-nav__button md-logo" href="https://binnes.github.io/mkdocTest" title="Testing mkdocs">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+<label class="md-header-nav__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header-nav__title" data-md-component="header-title">
+<div class="md-header-nav__ellipsis">
+<span class="md-header-nav__topic md-ellipsis">
+            Testing mkdocs
+          </span>
+<span class="md-header-nav__topic md-ellipsis">
+            
+              MkDocs
+            
+          </span>
+</div>
+</div>
+<label class="md-header-nav__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Search" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" data-md-component="search-reset" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header-nav__source">
+<a class="md-source" href="https://github.com/binnes/mkdocTest" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    binnes/mkdocTest
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Testing mkdocs" class="md-nav__button md-logo" href="https://binnes.github.io/mkdocTest" title="Testing mkdocs">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"></path></svg>
+</a>
+    Testing mkdocs
+  </label>
+<div class="md-nav__source">
+<a class="md-source" href="https://github.com/binnes/mkdocTest" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    binnes/mkdocTest
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="index.html">
+      Home
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="GitHubActions.html">
+      Actions
+    </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+        MkDocs
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="MkDocs.html">
+      MkDocs
+    </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#installing-mkdocs">
+    Installing MkDocs
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuring-mkdocs">
+    Configuring MkDocs
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#controlling-site-navigation">
+    Controlling site navigation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#publishing-the-site">
+    Publishing the site
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#options-for-customisation">
+    Options for customisation
+  </a>
+<nav aria-label="Options for customisation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#options-for-changing-the-generated-site-look-and-feel">
+    Options for changing the generated site look and feel
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#markdown-extensions">
+    Markdown extensions
+  </a>
+<nav aria-label="Markdown extensions" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-of-customisation">
+    Example of customisation
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#plugins">
+    Plugins
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#generating-pdf-documentation-for-your-site">
+    Generating PDF documentation for your site
+  </a>
+<nav aria-label="Generating PDF documentation for your site" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#explicitly-define-all-markdown-pages">
+    Explicitly define all Markdown pages
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="GitHubPages.html">
+      Pages
+    </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#installing-mkdocs">
+    Installing MkDocs
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuring-mkdocs">
+    Configuring MkDocs
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#controlling-site-navigation">
+    Controlling site navigation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#publishing-the-site">
+    Publishing the site
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#options-for-customisation">
+    Options for customisation
+  </a>
+<nav aria-label="Options for customisation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#options-for-changing-the-generated-site-look-and-feel">
+    Options for changing the generated site look and feel
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#markdown-extensions">
+    Markdown extensions
+  </a>
+<nav aria-label="Markdown extensions" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example-of-customisation">
+    Example of customisation
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#plugins">
+    Plugins
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#generating-pdf-documentation-for-your-site">
+    Generating PDF documentation for your site
+  </a>
+<nav aria-label="Generating PDF documentation for your site" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#explicitly-define-all-markdown-pages">
+    Explicitly define all Markdown pages
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content">
+<article class="md-content__inner md-typeset">
+<h1 id="mkdocs">MkDocs<a class="headerlink" href="#mkdocs" title="Permanent link">¶</a></h1>
+<p><a href="https://www.mkdocs.org" target="_blank">MkDocs</a> is an open source project that takes Markdown documents and generates a static web site.  The static web site does have some useful features, such as navigation and search.</p>
+<p>MkDocs is easy to <a href="https://www.mkdocs.org/#installation" target="_blank">install</a> on all common operating systems and provides a good developer experience, where you can see real time changes as you work on a document.  </p>
+<p>You also have multiple <a href="https://www.mkdocs.org/#theming-our-documentation" target="_blank">built-in</a> or  <a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes" target="_blank">community</a> themes available and have the option to customize an existing theme or <a href="https://www.mkdocs.org/user-guide/custom-themes/" target="_blank">create a new theme</a> the get the documentation layout and style exactly as you want.  For this project the default theme is used.</p>
+<h2 id="installing-mkdocs">Installing MkDocs<a class="headerlink" href="#installing-mkdocs" title="Permanent link">¶</a></h2>
+<p>Before you can use MkDocs you need to install it.  The <a href="https://www.mkdocs.org/#installation" target="_blank">documentation</a> provides instructions for installation of the python 3 prerequisites and MkDocs</p>
+<p>This project uses some additional plugins and extensions to the core MkDocs, which are discussed later in this section.  You also need to install the extensions and their prerequisites if you want to use the additional features.</p>
+<h2 id="configuring-mkdocs">Configuring MkDocs<a class="headerlink" href="#configuring-mkdocs" title="Permanent link">¶</a></h2>
+<p>MkDocs is configured using a file named <strong>mkdocs.yml</strong> located in the root directory of your project.  The minimum configuration is simply a site name.</p>
+<pre><code class="language-yaml">site_name: Testing mkdocs
+site_description: &gt;-
+  Automatically create formatted documentation from Markdown files in a GitHub repository.
+  The Markdown is automatically formatted using Docs, generated when a GitHub pull request or push
+  is made to the repository using GitHub Actions and hosted on GitHub Pages.
+site_url: https://binnes.github.io/mkdocTest
+site_author: Brian Innes
+repo_name: binnes/mkdocTest
+repo_url: https://github.com/binnes/mkdocTest
+edit_uri: ""
+use_directory_urls: false
+theme:
+    name: material
+plugins:
+  - search
+  - with-pdf:
+      cover_subtitle: Workshop documentation from Markdown
+      output_path: pdf/mkdocs.pdf
+markdown_extensions:
+  - attr_list
+  - admonition
+  - toc:
+      permalink: true
+extra_css:
+    - css/extra.css
+    - css/pdf-print.css
+nav:
+  - Home: index.md
+  - Actions: GitHubActions.md
+  - MkDocs: MkDocs.md
+  - Pages: GitHubPages.md
+google_analytics:
+  - 'UA-172132667-1'
+  - 'binnes.github.io/mkdocTest'
+</code></pre>
+<p>You can see all the configuration options in the <a href="https://www.mkdocs.org/user-guide/configuration/" target="_blank">MkDocs User Guide</a>, but some things to note:</p>
+<ul>
+<li>The site_name is a mandatory field and is used as the title for the site.</li>
+<li>The site_description field provides the description header metadata, which is used by a number of tools to summarise the content of a site</li>
+<li>The default location MkDocs looks for docs to render is the <strong>docs</strong> directory in the root of your project.  This can be changed by adding the <strong>docs_dir</strong> configuration option.</li>
+<li>The default location MkDocs will write the rendered site is the <strong>site</strong> directory.  This can be changed by adding the <strong>site_dir</strong> configuration option.</li>
+<li>MkDocs automatically adds the <strong>search</strong> plugin to generate a search capability on a generated site, but it must be specified when adding a <strong>plugins</strong> section to use additional plugins</li>
+<li>The default theme is <strong>mkdocs</strong>, but this can be altered using the <strong>theme</strong> configuration options.</li>
+<li>The <strong>attr_list</strong> Markdown extension has been enabled to allow <a href="https://python-markdown.github.io/extensions/attr_list/" target="_blank">additional HTML attributes</a> to be added to markdown.  This is used to allow links to be opened in a new tab or window rather than leaving the site by adding the <strong>target attribute</strong>.  So the Markdown for the link in this section is specified in Markdown as  : <code>[additional HTML attributes](https://python-markdown.github.io/extensions/attr_list/){target=_blank}</code></li>
+<li>You control the navigation options of the published site using the <strong>nav</strong> configuration option.</li>
+<li>MkDocs is enabled for Google Analytics, simply specify your details to start collecting data on a site.</li>
+</ul>
+<p>This project is using GitHub Actions to generate the site, so the site directory shouldn't be pushed manually into the GitHub repository, so this project has added the <strong>site/</strong> directory to the <strong>.gitignore</strong> file, to prevent it being added to the repository.</p>
+<h2 id="controlling-site-navigation">Controlling site navigation<a class="headerlink" href="#controlling-site-navigation" title="Permanent link">¶</a></h2>
+<p>The <strong>nav</strong> configuration controls the navigation on the site.  Different themes can support different levels of navigation nesting and offer different navigation options on the page.  </p>
+<p>You can control the navigation nesting by adding a section in the configuration.  If I changed the navigation for this project to:</p>
+<pre><code class="language-yaml">  nav:
+  - Home: index.md
+  - Configuration:
+    - Actions: GitHubActions.md
+    - MkDocs: MkDocs.md
+    - Pages: GitHubPages.md
+</code></pre>
+<p>the navigation now shows the top level <strong>Configuration</strong> option as a drop down list containing the 3 sub-level entries.</p>
+<p><img alt="new navigation" class="center" src="images/navigation.png" style="width: 50%"/></p>
+<h2 id="publishing-the-site">Publishing the site<a class="headerlink" href="#publishing-the-site" title="Permanent link">¶</a></h2>
+<p>MkDocs has a built in option for deploying to GitHub Pages.  </p>
+<p>The default option is to push the generated site to a branch in the GitHub repository called <strong>gh-pages</strong>.  This default can be changed using the <strong>remote_branch</strong> configuration option.</p>
+<p>As this project uses a GitHub Action to automatically publish the site when changes are pushed to the master branch it shouldn't be necessary to publish manually.</p>
+<p>To manually publish documentation to GitHub Pages:</p>
+<ol>
+<li>Open a terminal window</li>
+<li>Navigate to the root directory of your cloned GitHub repository</li>
+<li>Run the <strong>mkdocs</strong> command:</li>
+</ol>
+<pre><code class="language-sh">mkdocs gh-deploy
+</code></pre>
+<h2 id="options-for-customisation">Options for customisation<a class="headerlink" href="#options-for-customisation" title="Permanent link">¶</a></h2>
+<p>MkDocs works pretty well with the default theme and configuration, but it is possible to change the styling and functionality of the generated site or add more complex Markdown formatting options.</p>
+<h3 id="options-for-changing-the-generated-site-look-and-feel">Options for changing the generated site look and feel<a class="headerlink" href="#options-for-changing-the-generated-site-look-and-feel" title="Permanent link">¶</a></h3>
+<p>The default <strong>mkdocs</strong> and <strong>readthedocs</strong> themes provide good options for the layout, navigation and style of the generated site, but the <a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes">community provided themes</a> offer additional options.  This site is using the <strong>Material</strong> theme from the community.</p>
+<p>Using a community theme is usually pretty easy:</p>
+<ol>
+<li>install the theme - this is usually done using the pip package manager e.g. <code>pip install mkdocs-material</code></li>
+<li>
+<p>configure <strong>mkdocs.yml</strong> to set the theme e.g.</p>
+<p><code>yaml
+theme:
+    name: material</code></p>
+</li>
+</ol>
+<p>However if none of the provided themes are exactly what is needed then there are 2 options:</p>
+<ol>
+<li>Customise an existing theme - which is documented in the <a href="https://www.mkdocs.org/user-guide/styling-your-docs/#customizing-a-theme">MkDocs user guide</a></li>
+<li>Generate your own custom theme - which is also documented in the <a href="https://www.mkdocs.org/user-guide/custom-themes/">MkDocs user guide</a></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you choose a community theme or generate your own theme, then you might need to modify the Dockerfile for the <a href="GitHubActions.html">GitHub Action</a> if additional packages are needed for the theme.</p>
+</div>
+<h3 id="markdown-extensions">Markdown extensions<a class="headerlink" href="#markdown-extensions" title="Permanent link">¶</a></h3>
+<p>MkDocs uses <a href="https://python-markdown.github.io/">Python Markdown</a> to translate the Markdown files into HTML, which supports <a href="https://python-markdown.github.io/extensions/">extensions</a>.  You can modify the default set of extensions that MkDocs uses to add support for additional Markdown features using the <a href="https://python-markdown.github.io/extensions/"><strong>markdown_extensions</strong></a> configuration options in the mkdocs.yml configuration file.</p>
+<p>This project has the <strong>attr_list</strong> extension enabled to allow additional HTML attributes to be added when formatting pages.  In this project it is primarily used to add the <strong>target</strong> attributes to external links.  An additional use is to resize an image by specifying a width tag <code>{width=600}</code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>MkDocs supports HTML attributes, but if you want to generate a pdf of the site, then you need to avoid HTML attributes and use CSS to control presentation.  So the {width=600} HTML attribute should be rewritten to use CSS, so becomes {style="width: 600"}</p>
+</div>
+<p>If you choose add a Markdown extension, then you may need to modify the Dockerfile for the <a href="GitHubActions.html">GitHub Action</a> to ensure the extension is installed.  The officially supported extensions are usually installed by default, but third party extensions will need to be installed so they are available when the action is run to generate the site.</p>
+<h4 id="example-of-customisation">Example of customisation<a class="headerlink" href="#example-of-customisation" title="Permanent link">¶</a></h4>
+<p>Adding the <strong>attr_list</strong> extension we can alter the appearance of images.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The additional markup used for formatting by Markdown extensions will not be rendered by the GitHub Markdown renderer.  The extended Markdown will appear on pages viewed through the GitHub repository pages.</p>
+</div>
+<p>The Markdown <code>![menu](images/menu.png)</code> will generate the image below:</p>
+<p><img alt="menu" src="images/menu.png"/></p>
+<p>However, you may want to change the size of the image, so we can use any of the CSS options for specifying a size (px, em, rem, %, ...).  The following will make the image 50% of the width of the column containing the image: <code>![menu](images/menu.png){style="width: 50%"}</code> which produces the following output:</p>
+<p><img alt="menu" src="images/menu.png" style="width: 50%"/></p>
+<p>You can also add additional styles to an element, so to centre the above image the following can be used: <code>![menu](images/menu.png){style="width: 50%; display: block; margin: 0 auto;"}</code></p>
+<p>which creates the following:</p>
+<p><img alt="menu" src="images/menu.png" style="width: 50%; display: block; margin: 0 auto;"/></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can combine customising the style using additional CSS with the attr_list plugin to create a custom style to apply to Markdown.  If the theme provides a suitable style then you can also use it rather than defining a new custom style where appropriate.</p>
+</div>
+<p>If I create a file within a css folder inside the docs folder called <strong>extra.css</strong> containing:</p>
+<pre><code class="language-css">img.center {
+  display: block;
+  margin: 0 auto;
+}
+</code></pre>
+<p>and configure MkDocs to use that file by adding the <strong>extra_css</strong> configuration to the <strong>mkdocs.yml</strong> configuration file, then I can just apply the class to the image: <code>![menu](images/menu.png){style="width: 50%" .center}</code> which produces the same output as using the style attribute above.</p>
+<p><img alt="menu" class="center" src="images/menu.png" style="width: 50%"/></p>
+<p>You may also have noticed the <strong>Note</strong> section above.  This is created using the <a href="https://python-markdown.github.io/extensions/admonition/" target="_blank"><strong>admonition</strong></a> Markdown extension and the following Markdown text:</p>
+<pre><code class="language-Markdown">!!! note
+    You can combine customising the style using additional CSS with the attr_list plugin to create a custom style to apply to Markdown.  If the theme provides a suitable style then you can also use it rather than defining a new custom style where appropriate.
+</code></pre>
+<p>The default <strong>mkdocs</strong> theme supports admonition tags of <strong>note</strong>, <strong>warning</strong> and <strong>danger</strong>.  You can add additional tags by creating custom CSS in the <strong>extra.css</strong> file.</p>
+<h3 id="plugins">Plugins<a class="headerlink" href="#plugins" title="Permanent link">¶</a></h3>
+<p>Plugins provide more advanced customisation within MkDocs, such as providing the search capability within the generated static site.  You can create your own plugins or use one of the <a href="https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins">community provided plugins</a> to add additional capability to the generated site.</p>
+<p>Again any plugins used in a site will need to be installed, so the Docker file for the <a href="GitHubActions.html">GitHub Action</a> will need to be modified to ensure all plugins are available when the action runs to generate the site.</p>
+<h2 id="generating-pdf-documentation-for-your-site">Generating PDF documentation for your site<a class="headerlink" href="#generating-pdf-documentation-for-your-site" title="Permanent link">¶</a></h2>
+<p>In additional to a static web site, MkDocs can also generate a PDF file containing all the documents in the site combined into a single PDF.  To do this you need to use a plugin.  There are a number of plugins available that will generate a pdf, but the one I use is called <strong>MkDocs with pdf</strong>.  Before you can use it you need to install it along with the prerequisites.  The installation is documented in the <a href="https://github.com/orzih/mkdocs-with-pdf" target="_blank">plugin project README file</a>.</p>
+<p>Once the plugin is installed it can be added to the MkDocs configuration file, in the plugin section:</p>
+<pre><code class="language-yaml">plugins:
+  - search
+  - with-pdf:
+      cover_subtitle: Workshop documentation from Markdown
+      output_path: pdf/mkdocs.pdf
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You need to add the search plugin when adding the plugins section.  The search plugin is added by default if no plugins section is added, but needs to be manually added when a plugins section is created in the configuration file.</p>
+</div>
+<p>You will see there is an option to provide a subtitle to be placed on the cover page.</p>
+<p>Once the plugin has been added to the MkDocs config file it will be run when a <strong>mkdocs build</strong> command is issued, so each time the static HTML site is built then a new pdf will be created.  When using <strong>mkdocs serve</strong> the pdf will not be built.</p>
+<p>The default location for the pdf is within the site folder.  A new folder named <strong>pdf</strong> is create and the pdf file is named <strong>document.pdf</strong>.  These defaults can be modified by providing the <strong>output_path</strong> configuration property.</p>
+<p>The <strong>Material</strong> theme automatically adds a link to the generated pdf at the bottom of each page of the static website.  If you're reading this served from GitHub pages, then check the bottom of this page to see the link to the pdf version of this documentation.</p>
+<h3 id="explicitly-define-all-markdown-pages">Explicitly define all Markdown pages<a class="headerlink" href="#explicitly-define-all-markdown-pages" title="Permanent link">¶</a></h3>
+<p>When generating a pdf, you need to place all Markdown documents you want included in the pdf in the navigation configuration within the <strong>mkdocs.yaml</strong> configuration file.  </p>
+<p>When generating a static site MkDocs will include Markdown pages that are not specified in the site navigation, so long as they are linked to by a page defined in the navigation.  </p>
+<p>However, a pdf document needs to have everything explicitly declared as it specifies the order in which the Markdown pages appear in the pdf.  Any page not explicitly declared within the <strong>nav</strong> configuration will not be included in the pdf, so any links to those pages will not work in the pdf.</p>
+<p>A common approach to include content which would otherwise not appear in the site navigation is to have an <strong>Appendix</strong> or <strong>Additional Resources</strong> section at the end of the pdf.</p>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-nav">
+<nav aria-label="Footer" class="md-footer-nav__inner md-grid">
+<a class="md-footer-nav__link md-footer-nav__link--prev" href="GitHubActions.html" rel="prev">
+<div class="md-footer-nav__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer-nav__title">
+<div class="md-ellipsis">
+<span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Actions
+              </div>
+</div>
+</a>
+<a class="md-footer-nav__link md-footer-nav__link--next" href="GitHubPages.html" rel="next">
+<div class="md-footer-nav__title">
+<div class="md-ellipsis">
+<span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Pages
+              </div>
+</div>
+<div class="md-footer-nav__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+</div>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+ ... <a class="link--pdf-download" download href="pdf/mkdocs.pdf" title="PDF">download PDF</a></div>
+</div>
+</div>
+</footer>
+</div>
+<script src="assets/javascripts/vendor.6a3d08fc.min.js"></script>
+<script src="assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+<script>
+        app = initialize({
+          base: ".",
+          features: [],
+          search: Object.assign({
+            worker: "assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+</body>
+</html>
