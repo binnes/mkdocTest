@@ -98,6 +98,9 @@ jobs:
 
 Here you can see the workflow has a name then the **on** section defines when this workflow will run.  Here I specified that this workflow will only run when something is pushed to the master branch or a pull request is made to the master branch.  Activity on other branches will not trigger this workflow.
 
+!!! Info
+    GitHub as renamed the default branch from **master** to **main** in all new repositories
+
 When the workflow triggers a single job is run within a Ubuntu Linux container.  The job has 2 steps that are run sequentially.  
 
 The first one uses an action from the marketplace to checkout the latest code from the repository (after the push or pull request that triggered the workflow has taken place).
